@@ -3,6 +3,7 @@ package com.example.server.controller;
 import com.example.server.dto.TaskDTO;
 import com.example.server.model.Task;
 import com.example.server.service.TaskService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,18 +24,21 @@ public class TaskController {
 
 
     @PostMapping()
-    public Task addTask(@RequestBody TaskDTO task){
-        return taskService.saveTask(task);
+    public void addTask(@RequestBody @Valid TaskDTO task){
+         taskService.saveTask(task);
     }
 
     @DeleteMapping("/{id}")
-    public long delete(@PathVariable("id")long id){
-        return taskService.deleteById(id);
+    public long delete(@PathVariable("id")String id){
+        System.out.println(id);
+        return taskService.deleteById(Long.parseLong(id));
     }
 
     @GetMapping()
     public List<Task> getAllTasks(){
         return taskService.getAll();
     }
+
+
 
 }

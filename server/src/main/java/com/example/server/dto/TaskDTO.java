@@ -1,12 +1,15 @@
 package com.example.server.dto;
 
 import com.example.server.model.Type;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @AllArgsConstructor
@@ -14,19 +17,17 @@ import java.util.Date;
 @Getter
 @Setter
 public class TaskDTO {
-    @NonNull
-    private Type type;
+    @NotEmpty
+    private String type;
 
-    @NonNull
+    @NotEmpty
     private String name;
 
-    @NonNull
-    private Date limit_date;
+    @NotNull
+    private LocalDate limit_date;
 
-    @NonNull
-    private Date creation_date;
-
-    @NonNull
+    @NotNull
+    @Min(0)
     private int estimated_duration;
 
 
