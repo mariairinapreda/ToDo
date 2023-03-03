@@ -1,0 +1,10 @@
+#tasks {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+button{
+    justify-self: flex-end;
+    width: min-content;
+
+}

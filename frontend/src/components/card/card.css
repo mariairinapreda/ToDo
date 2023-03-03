@@ -1,0 +1,20 @@
+
+h1 {
+    margin-top: 5em;
+    display: flex;
+    justify-self: center;
+}
+
+#cards {
+    margin-top: 2em;
+    border: 0.2em solid black;
+    display: grid;
+    justify-self: center;
+    justify-content: space-around;
+}
+
+#deleteButton {
+    height: 1em;
+    text-decoration: none;
+    display: inline;
+}

@@ -1,0 +1,19 @@
+#form{
+    margin-top: 5em;
+    border: 0.2em solid black;
+    display: grid;
+    justify-content: space-around;
+
+}
+span{
+    width: 10em;
+    display: grid;
+    justify-content: start;
+    align-content: space-around;
+}
+.title{
+    font-weight: bold;
+}
+.small{
+    font-weight: normal;
+}

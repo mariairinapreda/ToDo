@@ -1,0 +1,5 @@
+#addButton{
+    display: grid;
+    justify-self: flex-end;
+    align-self: flex-end;
+}
